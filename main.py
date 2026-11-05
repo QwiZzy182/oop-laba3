@@ -121,7 +121,6 @@ class UltimateTranslator:
         dest_code = settings.LANGUAGES[dest_lang_name]
 
         try:
-            # Основной сервер перевода (Bing) — работает быстро и стабильно
             translated_text = ts.translate_text(
                 query_text=text,
                 from_language=src_code,
@@ -131,7 +130,6 @@ class UltimateTranslator:
             self.root.after(0, self.update_output_success, translated_text)
         except Exception:
             try:
-                # Резервный сервер (Google) на случай сбоя первого
                 translated_text = ts.translate_text(
                     query_text=text,
                     from_language=src_code,
@@ -159,8 +157,9 @@ class UltimateTranslator:
     def clear_fields(self):
         self.text_input.delete("1.0", tk.END)
         self.text_output.config(state=tk.NORMAL)
-        self.text_output.delete()
-        self.text_output.config(state=tk.NORMAL)
+        self.text_output.delete("1.0", tk.END)
+        self.text_output.config(state=tk.DISABLED)
+
 
 if __name__ == "__main__":
     root = tk.Tk()
