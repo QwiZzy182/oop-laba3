@@ -1,7 +1,7 @@
 WINDOW_TITLE = "Переводчик(не стрелок:( )"
 WINDOW_GEOMETRY = "500x480"
-FONT_MAIN = ("Times New Roman", 12)
-FONT_RESULT = ("Times New Roman", 12, "bold")
+FONT_MAIN = ("Arial", 12)
+FONT_RESULT = ("Arial", 12, "bold")
 COLOR_BG = "#f8f9fa"
 COLOR_PRIMARY = "#2ecc71"
 LANGUAGES = {
