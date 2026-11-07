@@ -1,15 +1,8 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-import settings
-import dictionary_data
-
-
-import tkinter as tk
-from tkinter import ttk, messagebox
 import threading
 import settings
 
-# Автоматически проверяем наличие библиотеки при старте
 try:
     import translators as ts
 except ImportError:
@@ -48,7 +41,7 @@ class UltimateTranslator:
         main_frame = tk.Frame(self.root, bg=settings.COLOR_BG)
         main_frame.pack(padx=20, pady=15, fill=tk.BOTH, expand=True)
 
-        # Выбор языков
+        #Выбор языков
         lang_frame = tk.Frame(main_frame, bg=settings.COLOR_BG)
         lang_frame.pack(fill=tk.X, pady=(0, 15))
 
@@ -72,13 +65,13 @@ class UltimateTranslator:
         self.combo_dest.current(0)
         self.combo_dest.pack(fill=tk.X, pady=(5, 0))
 
-        # Поле ввода текста
+        #Поле ввода
         tk.Label(main_frame, text="Введите текст для перевода:", font=settings.FONT_MAIN, bg=settings.COLOR_BG).pack(
             anchor="w", pady=(0, 5))
         self.text_input = tk.Text(main_frame, height=5, font=settings.FONT_MAIN, wrap=tk.WORD, bd=1, relief=tk.SOLID)
         self.text_input.pack(fill=tk.X, pady=(0, 15))
 
-        # Кнопка перевода
+        #Кнопка перевода
         self.translate_btn = tk.Button(
             main_frame,
             text="Перевести онлайн",
@@ -92,7 +85,7 @@ class UltimateTranslator:
         )
         self.translate_btn.pack(fill=tk.X, pady=(0, 15))
 
-        # Поле вывода результата
+        #Поле вывода
         tk.Label(main_frame, text="Результат перевода:", font=settings.FONT_MAIN, bg=settings.COLOR_BG,
                  fg="#7f8c8d").pack(anchor="w")
         self.text_output = tk.Text(main_frame, height=5, font=settings.FONT_RESULT, wrap=tk.WORD, bg="#ffffff", bd=1,
